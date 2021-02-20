@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <!-- 忽略浏览器自动识别数字为电话号码 -->
+    <meta name="format-detection" content="telephone=no">
+    <!-- 忽略浏览器自动识别邮箱账号 -->
+    <meta name="format-detection" content="email=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+     <!-- 使用CDN的CSS文件 -->
+    <% for (var i in htmlWebpackPlugin.options.cdnCSS && htmlWebpackPlugin.options.cdnCSS) { %>
+      <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.cdnCSS[i] %>">
+    <% } %>
+  </head>
+  <body>
+    <div id="app" class="app-welcome">
+    </div>
+    <!-- 使用CDN的JS文件 -->
+    <% for (var i in htmlWebpackPlugin.options.cdnJS && htmlWebpackPlugin.options.cdnJS) { %>
+      <script src="<%= htmlWebpackPlugin.options.cdnJS[i] %>"></script>
+    <% } %>
+  </body>
+</html>
